@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Happy tails</title>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
+  <link href='https://fonts.googleapis.com/css?family=Dancing Script' rel='stylesheet'>
+  <!-- Custom styles for this template -->
+  
+  <link href="css/main.82cfd66e.css" rel="stylesheet">
+  <link href="css/scrolling-nav.css" rel="stylesheet">
+  <link rel="stylesheet" href="css\carousel.css">
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/paper-kit.css">
+
+
+    </head>
+    <body>
+         <!-- Navigation -->
+ 
+  <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand js-scroll-trigger " href="#page-top"><img src="ImgPets\Header\Logo1png.jpg" alt="Happy tails" height="46rm"></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger text-dark " href="index.html#page-top">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger text-dark " href="index.html#about">About</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link js-scroll-trigger text-dark " href="index.html#portfolio">Portfolio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="index.html#pricing">Pricing</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="index.html#contact">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <br>
+  <br><br>
+  <br><br>
+    
+  
+<div class="container">
+    <div class="container-time">
+    <h2 class="heading">We are open:</h2>
+    <h3 class="heading-days">Tuesday-Sunday</h3>
+    <p>9am - 11am </p>
+    <p>14am - 18pm </p>
+    
+   
+    <h6 class="heading-phone">Call Us: 0860590169</h6>
+    </div>
+    
+    <div class="container-form">
+    <form action="#">
+    <h2 class="heading heading-yellow">Online Booking form:</h2>
+    
+    <div class="form-field">
+    <p>Your Name</p>
+    <input type="text" placeholder="Your Name">
+    </div>
+    <div class="form-field">
+    <p>Your email</p>
+    <input type="email" placeholder="Your email">
+    </div>
+    <div class="form-field">
+    <p>Date</p>
+    <input type="date">
+    </div>
+    <div class="form-field">
+    <p>Time</p>
+    <input type="time">
+    </div>
+    <div class="form-field">
+    <p>How many pets?</p>
+    <select name="select" id="#">
+    <option value="1">1 pet</option>
+    <option value="2">2 pets</option>
+    <option value="3">3 pets</option>
+    <option value="4">4 pets</option>
+    <option value="5+">4+ pets</option>
+    </select>
+    </div>
+    
+    <button class="btn">Submit</button>
+    </form>
+    </div>
+    </div>
+    <p>You can pay €15 deposit now or after you will recieve your confirmation email. </p>
+    <!--Paypal-->
+        <div id="smart-button-container">
+            <div style="text-align: center;">
+              <div id="paypal-button-container"></div>
+            </div>
+          </div>
+        <script src="https://www.paypal.com/sdk/js?client-id=sb&currency=EUR" data-sdk-integration-source="button-factory"></script>
+        <script>
+          function initPayPalButton() {
+            paypal.Buttons({
+              style: {
+                shape: 'rect',
+                color: 'silver',
+                layout: 'vertical',
+                label: 'paypal',
+                
+              },
+      
+              createOrder: function(data, actions) {
+                return actions.order.create({
+                  purchase_units: [{"description":"Booking fee","amount":{"currency_code":"EUR","value":20}}]
+                });
+              },
+      
+              onApprove: function(data, actions) {
+                return actions.order.capture().then(function(details) {
+                  alert('Transaction completed by ' + details.payer.name.given_name + '!');
+                });
+              },
+      
+              onError: function(err) {
+                console.log(err);
+              }
+            }).render('#paypal-button-container');
+          }
+          initPayPalButton();
+        </script>
+    </body>
+</html>
